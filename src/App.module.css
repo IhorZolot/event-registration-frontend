@@ -1,0 +1,17 @@
+
+.navSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-bottom: 4px solid transparent;
+  margin-bottom: 20px;
+
+}
+.linkStyles {
+  color: #0a5dc2;
+  font-weight: bold;
+  font-size: 20px;
+}
