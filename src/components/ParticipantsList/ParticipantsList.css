@@ -1,0 +1,49 @@
+.participants-list {
+  max-width: 1220px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0.9, 1.1);
+}
+.participants-title-block{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.participants-title {
+  text-align: left; 
+}
+
+.participants-input {
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  margin-bottom: 15px;
+}
+
+.participants-list-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; 
+}
+
+.participants-list-li {
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px 0;
+  transition: box-shadow 0.3s ease;
+}
+.participants-list-span{
+  font-style: italic;
+  font-size: 14px;
+}
+

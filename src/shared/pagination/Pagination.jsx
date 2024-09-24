@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { GoChevronLeft, GoChevronRight } from "react-icons/go"; 
-import styles from './Pagination.module.css';
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import './Pagination.css' 
 
 const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   const handlePageClick = (pageNumber) => {
@@ -12,8 +12,8 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   }
 
   return (
-    <div className={styles.paginationSection}>
-      <button
+    <div className='pagination-section'>
+      <button className='pagination-section-button'
         onClick={() => handlePageClick(currentPage - 1)}
         disabled={currentPage === 1}
         style={{ margin: '0 5px' }}
@@ -23,7 +23,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
       {Array(totalPages)
         .fill('')
         .map((_, index) => (
-        <button
+        <button className='pagination-section-button'
           key={index}
           onClick={() => handlePageClick(index + 1)}
           disabled={index + 1 === currentPage} 
@@ -35,7 +35,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
           {index + 1}
         </button>
       ))}
-      <button
+      <button className='pagination-section-button'
         onClick={() => handlePageClick(currentPage + 1)}
         disabled={currentPage === totalPages}
         style={{ margin: '0 5px' }}

@@ -43,9 +43,9 @@ const EventList = () => {
 
   return (
     <div className='event-list' >
-      <h1 >Events</h1>
-      <div >
-        <button  onClick={() => navigate('/event/create')}>Create Event</button>
+      <h1 className='event-list-title'  >Events</h1>
+      <div className='event-list-controls'  >
+        <button className='btn-create-event'  onClick={() => navigate('/event/create')}>Create Event</button>
         <SortControls 
         sortBy={sortBy}
         sortOrder={sortOrder}
@@ -54,7 +54,7 @@ const EventList = () => {
       />
       </div>
         
-      <div >
+      <div className='event-items' >
           {events.map(event => (
             <EventItem key={event._id} event={event} />
           ))}

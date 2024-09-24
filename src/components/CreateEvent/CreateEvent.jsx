@@ -9,10 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import eventSchema from '../../config/eventSchema';
 import { API } from '../../config/adminConfig';
 import Button from '../../shared/button/Button';
-
-import styles from './CreateEvent.module.css';
-
-
+import './CreateEvent.css'
 
 const CreateEvent = () => {
   const [eventDate, setEventDate] = useState('');
@@ -32,7 +29,6 @@ const CreateEvent = () => {
     setEventDate(date);
     setValue('eventDate', date);  
   };
-
   const onSubmit = async (data) => {
     try {
       const formattedDate = eventDate.toISOString().split('T')[0];
@@ -49,35 +45,37 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className={styles.containerForm}  >
-      <h2>Create New Event</h2>
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form }>
-      <div className={styles.formGroup}>
+    <div className='create-event' >
+      <h2 className='create-title' >Create New Event</h2>
+    <form onSubmit={handleSubmit(onSubmit)} className='create-event-form' >
+      <div className='form-input'>
         <label>Title</label>
-        <input {...register('title')} />
-        {errors.title && <p className={styles.errorMessage} >{errors.title.message}</p>}
+        <input className='input-event-create' {...register('title')} />
+        {errors.title && <p className='error-message' >{errors.title.message}</p>}
       </div>
-      <div className= {styles.formGroup}>
+      <div className='form-input' >
         <label>Date</label>
         <DatePicker
           selected={eventDate}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select event date"
+          className='input-event-create'
         />
-        {errors.eventDate && <p className={styles.errorMessage}>{errors.eventDate.message}</p>}
+        {errors.eventDate && <p className='error-message' >{errors.eventDate.message}</p>}
       </div>
-      <div className= {styles.formGroup}>
+      <div className='form-input'>
         <label>Organizer</label>
-        <input {...register('organizer')} />
-        {errors.organizer && <p className={styles.errorMessage}>{errors.organizer.message}</p>}
+        <input className='input-event-create'  {...register('organizer')} />
+        {errors.organizer && <p className='error-message' >{errors.organizer.message}</p>}
       </div>
-      <div className={styles.formGroup}>
+      <div className='form-input'>
         <label>Description</label>
-        <textarea {...register('description')} />
+        <textarea className='input-event-create' {...register('description')} />
+        {errors.description && <p className='error-message' >{errors.description.message}</p>}
       </div>
-      <div className={styles.buttonsForm}>
-        <button type="submit">Create</button>
+      <div className='button-section' >
+        <button className='button-submit' type="submit">Create</button>
       <Button/>
       </div>
       

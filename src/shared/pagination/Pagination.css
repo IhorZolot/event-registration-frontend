@@ -1,10 +1,10 @@
-.paginationSection {
+.pagination-section {
   display: flex;
   justify-content: center;
   align-items: center;
   
 }
-.paginationSection button {
+.pagination-section-button {
   display: flex;
   justify-content: center;
   align-items: center;

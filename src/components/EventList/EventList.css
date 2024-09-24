@@ -19,21 +19,20 @@
 }
 
 .btn-create-event {
-  background-color: #4caf50;
-  color: white;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #1b2ac9;
   padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
-
 .btn-create-event:hover {
-  background-color: #45a049;
+  color: #45a049;
 }
 
 .event-items {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Відстань між елементами */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; 
+  margin-bottom: 20px;
 }
