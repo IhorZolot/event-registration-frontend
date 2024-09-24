@@ -9,6 +9,7 @@ import registrationSchema from '../../config/registrationSchema';
 import { API } from '../../config/adminConfig';
 import Button from '../../shared/button/Button';
 import './RegistrationForm.css'
+import { toast } from 'react-toastify';
 
 const RegistrationForm = () => {
 	const navigate = useNavigate()
@@ -33,6 +34,7 @@ const RegistrationForm = () => {
 				...data,
       dateOfBirth: formattedDate
 			})
+			toast.success('Registration successful!')
 			navigate(`/event/${eventId}/participants`)
 		} catch (error) {
 			console.error('Error registering for event:', error)

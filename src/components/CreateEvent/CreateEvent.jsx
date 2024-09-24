@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -37,9 +37,11 @@ const CreateEvent = () => {
         eventDate: formattedDate
       });
       console.log('Event created:', response.data);
+      toast.success('Event created successfully!');
       reset(); 
       navigate('/'); 
     } catch (error) {
+      toast.error('Error creating event!');
       console.error('Error creating event:', error);
     }
   };
