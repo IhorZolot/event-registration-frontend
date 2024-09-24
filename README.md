@@ -17,8 +17,33 @@
 - Pagination of events.
 - Ability to add participants to events.
 
-## Implemented Features
+### Installation
+#### Frontend Installation
+1. Clone the repository:
+```
+git clone https://github.com/(your-repository)/event-registration-frontend.git
+```
+2. Navigate to the corresponding folder:
+```
+cd event-registration-frontend
+```
+3. Install dependencies using the npm package manager:
+```
+npm install
+```
+#### Backend Installation
 
+4. Clone the repository:
+```
+git clone https://github.com/{your-repository}/event-registration-backend.git
+```
+5. Install dependencies using the npm package manager:
+```
+cd event-registration-backend
+npm install
+```
+
+## Implemented Features
 ### Base Level
 
 1. **Events Page**:
@@ -76,3 +101,4 @@
      - **Email**: enables filtering of participants by their contact details.
    - This improves participant management and facilitates easy access to information for organizers.
 
+[Back-End](https://event-registration-backend-d6s3.onrender.com)
