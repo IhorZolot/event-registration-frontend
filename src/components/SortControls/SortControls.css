@@ -10,10 +10,9 @@
 }
 
 .sort-select {
-  padding: 10px; 
+  padding: 5px; 
   border: 1px solid #ccc; 
-  border-radius: 50px; 
-  font-size: 1rem;
+  border-radius: 4px; 
   font-style: italic;
   transition: border-color 0.3s ease; 
 }

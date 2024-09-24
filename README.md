@@ -1,7 +1,7 @@
 # Events Registration App
 
 ## Description
-Events Registration App is a web application that allows users to register for events, view event details, and organize them. The application features a user-friendly interface for creating, viewing, sorting, and filtering events.
+[Events Registration App](https://event-registration-frontend-rouge.vercel.app) is a web application that allows users to register for events, view event details, and organize them. The application features a user-friendly interface for creating, viewing, sorting, and filtering events.
 
 ## Technologies
 
