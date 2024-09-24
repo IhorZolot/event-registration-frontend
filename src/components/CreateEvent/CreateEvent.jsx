@@ -1,15 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { API } from '../config/adminConfig';
-import eventSchema from '../config/eventSchema';
-import { useNavigate } from 'react-router-dom';
+import eventSchema from '../../config/eventSchema';
+import { API } from '../../config/adminConfig';
+import Button from '../../shared/button/Button';
 
 import styles from './CreateEvent.module.css';
-import Button from '../shared/button/Button';
+
+
 
 const CreateEvent = () => {
   const [eventDate, setEventDate] = useState('');
@@ -46,35 +49,34 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className={styles.container}  >
+    <div className={styles.containerForm}  >
       <h2>Create New Event</h2>
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer }>
-      <div>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form }>
+      <div className={styles.formGroup}>
         <label>Title</label>
         <input {...register('title')} />
         {errors.title && <p className={styles.errorMessage} >{errors.title.message}</p>}
       </div>
-      <div>
+      <div className= {styles.formGroup}>
         <label>Date</label>
         <DatePicker
           selected={eventDate}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
           placeholderText="Select event date"
-          className={styles.datePicker}
         />
         {errors.eventDate && <p className={styles.errorMessage}>{errors.eventDate.message}</p>}
       </div>
-      <div>
+      <div className= {styles.formGroup}>
         <label>Organizer</label>
         <input {...register('organizer')} />
         {errors.organizer && <p className={styles.errorMessage}>{errors.organizer.message}</p>}
       </div>
-      <div>
+      <div className={styles.formGroup}>
         <label>Description</label>
         <textarea {...register('description')} />
       </div>
-      <div className={styles.buttons}>
+      <div className={styles.buttonsForm}>
         <button type="submit">Create</button>
       <Button/>
       </div>

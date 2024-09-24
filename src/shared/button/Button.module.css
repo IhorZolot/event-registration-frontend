@@ -1,5 +1,12 @@
-.buttonStyle{
+.buttonStyle {
   background-color:transparent;
-  color: #0d1cc0;
+  color: #1b2ac9;
   padding: 5px 10px;
+  cursor: pointer ;
+  font-size: 14 px;
+  transition: transform 0.3s ease;
+}
+
+.buttonStyle:hover {
+    transform: scale(1.2);
 }

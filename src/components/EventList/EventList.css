@@ -1,0 +1,39 @@
+.event-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0.9, 1.1);
+}
+
+.event-list-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.event-list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-create-event {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-create-event:hover {
+  background-color: #45a049;
+}
+
+.event-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Відстань між елементами */
+}

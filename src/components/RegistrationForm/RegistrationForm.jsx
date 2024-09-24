@@ -5,8 +5,11 @@ import { useState } from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { API } from '../config/adminConfig'
-import registrationSchema from '../config/registrationSchema'
+
+import styles from './RegistrationForm.module.css';
+import registrationSchema from '../../config/registrationSchema';
+import { API } from '../../config/adminConfig';
+import Button from '../../shared/button/Button';
 
 
 const RegistrationForm = () => {
@@ -39,19 +42,20 @@ const RegistrationForm = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<div className={styles.containerRegistrationForm}>
 			<h2>Event registration</h2>
-			<div>
-				<label>Full name:</label>
-				<input {...register('fullName', { required: true })} type='text' />
-				{errors.fullName && <span>{errors.fullName.message}</span>}
+		<form onSubmit={handleSubmit(onSubmit)} >
+			<div className={styles.registerForm}>
+				<label>Full name</label>
+				<input {...register('fullName', { required: true })  } type='text' className={styles.inputRegistrationForm}/>
+				{errors.fullName && <span className={styles.errorMessage} >{errors.fullName.message}</span>}
 			</div>
-			<div>
+			<div className={styles.registerForm}>
 				<label>Email</label>
-				<input {...register('email', { required: true })} type='email' />
-				{errors.email && <span>{errors.email.message}</span>}
+				<input {...register('email', { required: true })} type='email' className={styles.inputRegistrationForm}/>
+				{errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
 			</div>
-			<div>
+			<div className={styles.registerForm}>
 				<label>Date of birth</label>
 					<DatePicker
             selected={startDate}
@@ -59,14 +63,14 @@ const RegistrationForm = () => {
             dateFormat="dd/MM/yyyy"  
             placeholderText="Select your birth date"
 					/>
-				{errors.dateOfBirth && <span>{errors.dateOfBirth.message}</span>}
+				{errors.dateOfBirth && <span className={styles.errorMessage}>{errors.dateOfBirth.message}</span>}
 			</div>
-			<div>
-				<label>Where did you hear about this event?</label>
-				<div>
-					<label>
+			<p>Where did you hear about this event?</p>
+			<div className={styles.sectorRadioButton}>
+				<div >
+					<label className={styles.radioButton } >
 						<input {...register('source')} type='radio' value='Social media' />
-						Social media
+						<span>Social media</span>
 					</label>
 				</div>
 				<div>
@@ -82,8 +86,12 @@ const RegistrationForm = () => {
 					</label>
 				</div>
 			</div>
+			<div className={styles.buttonsForm} >
 			<button type='submit'>Register</button>
+			<Button />
+			</div>
 		</form>
+		</div>
 	)
 }
 

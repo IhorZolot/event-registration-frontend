@@ -1,10 +1,12 @@
 import  { useState, useEffect, useCallback } from 'react';
-import EventItem from './EventItem';
-import { API } from '../config/adminConfig';
-import Pagination from '../shared/pagination/Pagination';
-import SortControls from './SortControls';
-import styles from './EventList.module.css';
 import {  useNavigate } from 'react-router-dom';
+
+import EventItem from '../EventItem/EventItem';
+import { API } from '../../config/adminConfig';
+import SortControls from '../SortControls/SortControls';
+import Pagination from '../../shared/pagination/Pagination';
+import './EventList.css';
+
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -29,22 +31,20 @@ const EventList = () => {
     fetchEvents();
   }, [fetchEvents]);
 
-
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
     setPage(1); 
     setEvents([]);
   };
-
   const handleOrderChange = (e) => {
     setSortOrder(e.target.value);
     setPage(1); 
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.header}>Events</h1>
-      <div className={styles.sortControls}>
+    <div className='event-list' >
+      <h1 >Events</h1>
+      <div >
         <button  onClick={() => navigate('/event/create')}>Create Event</button>
         <SortControls 
         sortBy={sortBy}
@@ -54,7 +54,7 @@ const EventList = () => {
       />
       </div>
         
-      <div className={styles.eventList}>
+      <div >
           {events.map(event => (
             <EventItem key={event._id} event={event} />
           ))}

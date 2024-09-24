@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import styles from './EventItem.module.css';
+import './EventItem.css';
 
 
 const EventItem = ({ event }) => {
@@ -15,16 +15,16 @@ const EventItem = ({ event }) => {
   };
 
   return (
-    <div className={styles.itemEvent}>
-      <h3>{event.title}</h3>
-      <p className={styles.description}>{event.description}</p>
-      <div className={styles.sectorDate}>
+    <div className='event-item'>
+      <h3 className='event-title' >{event.title}</h3>
+      <p className='event-description'>{event.description}</p>
+      <div className='event-info' >
       <p>{event.eventDate}</p>
       <p>{event.organizer}</p>
       </div>
-      <div className={styles.buttons}>
-        <button className={styles.buttonItem}   onClick={handleRegister}>Register</button>
-        <button className={styles.buttonItem} onClick={handleViewParticipants}>View</button>
+      <div className='event-actions' >
+        <button className='event-button'    onClick={handleRegister}>Register</button>
+        <button className='event-button'   onClick={handleViewParticipants}>View</button>
       </div>
     </div>
   );
